@@ -8,7 +8,7 @@ void mx_int_array_extender(int num_places, int array[num_places], int insert_ele
     }
     array[i + 1] = insert_element_1;
     
-    int j = num_of_cities - 2;
+    int j = num_places - 2;
     while (j >= insert_count + 1) {
         array[j + 1] = array[j];
         j--;

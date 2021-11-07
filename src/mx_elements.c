@@ -6,7 +6,7 @@ void mx_elements(char *line, char *result[3]) {
     int numerator;
     int denominator;
     while (line[i]) {
-        if (line[i] == '-')) {
+        if (line[i] == '-') {
             numerator = i;
             char *word = mx_strnew(i);
             int tmp1 = 0; 
@@ -43,7 +43,7 @@ void mx_elements(char *line, char *result[3]) {
                 tmp3++;
             }
             result[count] = word;
-            cont++;
+            count++;
         }
         i++;
     } 

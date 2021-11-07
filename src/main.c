@@ -11,7 +11,7 @@ int main(int argc, char *argv[]) {
             matrix[i][j] = TWO_BI;
     }
     mx_matrix_make((char *)argv[1], unique_cities, num_places, matrix);
-
+    
     r_mx *route_list = mx_floyd_warshall(num_places, matrix, unique_cities);
 
     r_mx *new_route_list =  mx_create_route_node("NULL","NULL","NULL",0,0,0);

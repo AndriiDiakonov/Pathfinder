@@ -3,7 +3,7 @@
 void mx_unic_array(char *name, char **places) {
     char *data = mx_file_to_str(name);
     int count = 0;
-    for (int i = 0; i < mx_strlen(file_data); i++) {
+    for (int i = 0; i < mx_strlen(data); i++) {
         if (mx_isalpha(data[i]) == -1)
             data[i] = ' ';
     }

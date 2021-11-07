@@ -1,8 +1,8 @@
 #include "../inc/pathfinder.h"
 
-void mx_outer_array_recursion_editor(r_mx *list, int num_places, char *array[num_places], int arr_int[num_places], recursed) {
+void mx_outer_array_recursion_editor(r_mx *list, int num_places, char *array[num_places], int arr_int[num_places], int recursed) {
     int checker = 0;
-    char *tmp[num_places]
+    char *tmp[num_places];
     char *tmp_integer[num_places];
     r_mx *copy = mx_copy_list(list);
     

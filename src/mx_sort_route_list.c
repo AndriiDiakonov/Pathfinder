@@ -21,3 +21,4 @@ void mx_sort_route_list(r_mx *list, r_mx *new_list, char **unique_cities, int nu
         }
     }
  }
+ 
