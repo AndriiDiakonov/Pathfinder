@@ -8,6 +8,7 @@
 #include <fcntl.h>
 #include <malloc/malloc.h>
 
+#define INT_MAX 2147483647
 #define INT_MIN -2147483648
 #define LONG_MAX 9223372036854775807
 #define LONG_MIN -9223372036854775807
