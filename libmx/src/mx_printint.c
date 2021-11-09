@@ -24,5 +24,4 @@ void mx_printint(int n) {
             mx_printchar(arr[j] + 48);
         }
     }     
-    mx_printchar('\n');
 }

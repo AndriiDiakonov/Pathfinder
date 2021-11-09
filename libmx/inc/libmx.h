@@ -8,6 +8,10 @@
 #include <fcntl.h>
 #include <malloc/malloc.h>
 
+#define INT_MIN -2147483648
+#define LONG_MAX 9223372036854775807
+#define LONG_MIN -9223372036854775807
+
 typedef struct s_list {
     void *data;
     struct s_list *next;
@@ -27,6 +31,7 @@ void mx_foreach_list(t_list *list, void(*f)(t_list *node));
 void mx_clear_list(t_list **list);
 void mx_del_node_if(t_list **list, void *del_data, bool (*cmp)(void *a, void *b));
 int mx_atoi(const char *str);
+long mx_atol(const char *str);
 void mx_printerr(const char *s);
 int mx_sum_digits(int num);
 char *mx_strchr(const char *s, int c);
