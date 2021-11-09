@@ -2,7 +2,6 @@
 
 void mx_invalid_islands(t_finder *path) {
     char *buffer = mx_strdup(path -> string);
-
     path -> num_islands = mx_atoi(buffer);
     if (path -> num_islands < 2)
         mx_print_err_islands();
