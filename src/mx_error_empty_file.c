@@ -16,5 +16,5 @@ void mx_error_empty_file(char *argv[], t_finder *path) {
         close(fd);
     }
     mx_strdel(&buf);
-    path->string = mx_file_to_str(argv[1]);
+    path -> string = mx_file_to_str(argv[1]);
 }
