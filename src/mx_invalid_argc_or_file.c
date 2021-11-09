@@ -9,7 +9,6 @@ void mx_invalid_argc_or_file(int argc, char *argv[], t_finder *path) {
     }
 
     fd = open(argv[1], O_RDONLY);
-    
     if (fd < 0) {
         mx_printerr("error: file ");
         mx_printerr(argv[1]);

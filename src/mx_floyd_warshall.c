@@ -3,11 +3,10 @@
 void mx_floyd_warshall(t_finder *path) {
     int sum;
     int i;
-
     for (i = 0; i < path -> num_islands; i++) {
         for (int j = i; j < path -> num_islands; j++) {
-            path->primary[i][j] = path->array[i][j];
-            path->primary[j][i] = path->array[j][i];
+            path -> primary[i][j] = path -> array[i][j];
+            path -> primary[j][i] = path -> array[j][i];
         }
     }
     for (int k = 0; k < path -> num_islands; k++) {
