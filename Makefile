@@ -1,25 +1,25 @@
-CFLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic
 NAME = pathfinder
+FLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic
 
-.PHONY: all clean uninstall reinstall
+SRC = src/*.c
 
-all: $(NAME)
+LIBMX = libmx/libmx.a
 
-$(NAME):
-	make -C libmx
-	clang $(CFLAGS) src/*.c -c 
-	mkdir obj
-	mv *.o obj 
-	clang $(CFLAGS) obj/*.o libmx/libmx.a -o $(NAME)
+all: install
 
+install: 
+	@make -C libmx/ 
+	@mkdir obj
+	@clang $(FLAGS) $(SRC) -c
+	@mv *.o obj/
+	@clang $(FLAGS) $(SRC) $(LIBMX) -o $(NAME)
+	
 clean:
-	rm -rf libmx/obj
-	rm -rf obj 
+	@rm -rf $(LIBMX)
+	@rm -rfd libmx/obj
+	@rm -rfd obj		
 
-uninstall:
-	clean
-	rm -rf libmx/libmx.a
-	rm -rf $(NAME)
+uninstall: clean	
+	@rm -rf $(NAME)
 
-reinstall: 
-	uninstall $(NAME)
+reinstall: uninstall all
