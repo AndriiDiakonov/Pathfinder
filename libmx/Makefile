@@ -1,27 +1,23 @@
-LIBNAME = libmx.a
+all: install
 
-FLAGS = -std=c11 -Wall -Wextra -Werror -Wpedantic
+install: libmx
 
-all: create_obj LIBMX building_library
+libmx: objects
+	@ar -rcs libmx.a obj/*.o
+	@ranlib libmx.a
 
-create_obj:
-	mkdir obj
-
-LIBMX:
-	clang $(FLAGS) -c src/*.c
-	mv *.o obj/
-
-building_library:
-	ar -rc $(LIBNAME) obj/*.o
-	ranlib $(LIBNAME)
-
-clean:
-	rm -rf obj
-
+objects:
+	@mkdir -p obj
+	@clang -std=c11 -Wall -Werror -Wextra -Wpedantic -c src/*.c -I inc/
+	@mv *.o obj/
+ 
 uninstall:
-	rm -rf obj
-	rm -rf $(LIBNAME)
+	@rm -rf libmx.a
+	@rm -rfd obj
 
 reinstall:
-	make uninstall
-	make
+	@make uninstall
+	@make
+
+clean:
+	@rm -rfd obj
